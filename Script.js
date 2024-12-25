@@ -51,13 +51,12 @@ document.getElementById("download-pdf").addEventListener("click", () => {
   contents.forEach(content => content.classList.add("active"));
 
   // Gerar o PDF
-  const element = document.querySelector(".container"); // Escolha o elemento para converter em PDF
+  const element = document.querySelector(".container");
   const options = {
     filename: 'ficha-personagem.pdf',
     html2canvas: { scale: 2 },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
   };
-
   html2pdf().set(options).from(element).save().then(() => {
     // Restaurar o estado original das abas
     contents.forEach(content => content.classList.remove("active"));
