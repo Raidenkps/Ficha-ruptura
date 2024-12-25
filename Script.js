@@ -44,12 +44,24 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.getElementById("download-pdf").addEventListener("click", () => {
-  const element = document.body; // Escolha o elemento para converter em PDF
+  const contents = document.querySelectorAll(".tab-content");
+  const activeTab = document.querySelector(".tab-button.active");
+  
+  // Tornar todas as abas visíveis
+  contents.forEach(content => content.classList.add("active"));
+
+  // Gerar o PDF
+  const element = document.querySelector(".container");
   const options = {
     filename: 'ficha-personagem.pdf',
     html2canvas: { scale: 2 },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
   };
-  html2pdf().set(options).from(element).save();
+  html2pdf().set(options).from(element).save().then(() => {
+    // Restaurar o estado original das abas
+    contents.forEach(content => content.classList.remove("active"));
+    if (activeTab) {
+      document.getElementById(activeTab.dataset.tab).classList.add("active");
+    }
+  });
 });
-
