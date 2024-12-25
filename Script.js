@@ -42,3 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Inicializar os cálculos quando a página carregar
   updateStats();
 });
+
+document.getElementById("download-pdf").addEventListener("click", () => {
+  const element = document.body; // Escolha o elemento para converter em PDF
+  const options = {
+    filename: 'ficha-personagem.pdf',
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+  };
+  html2pdf().set(options).from(element).save();
+});
+
