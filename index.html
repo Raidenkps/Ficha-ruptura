@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha de Personagem</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>Ficha de Personagem</header>
+  <div class="container">
+    <nav>
+      <button class="tab-button active" data-tab="descricao">Descrição</button>
+      <button class="tab-button" data-tab="atributos">Atributos</button>
+      <button class="tab-button" data-tab="estado">Estado</button>
+    </nav>
+
+    <!-- Abas -->
+    <div id="descricao" class="tab-content active">
+      <h2>Descrição</h2>
+      <div class="input-group">
+        <label for="nome">Nome do Personagem:</label>
+        <input type="text" id="nome" placeholder="Insira o nome do personagem">
+      </div>
+      <div class="input-group">
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" placeholder="14-16 anos" min="14" max="16">
+      </div>
+      <div class="input-group">
+        <label for="pais">Tem pais? Quais?</label>
+        <textarea id="pais" placeholder="Descreva os pais..."></textarea>
+      </div>
+      <div class="input-group">
+        <label for="irmaos">Tem irmãos? Quantos?</label>
+        <textarea id="irmaos" placeholder="Descreva os irmãos..."></textarea>
+      </div>
+      <div class="input-group">
+        <label for="traumas">Traumas e medos:</label>
+        <textarea id="traumas" placeholder="Escreva sobre os traumas e medos..."></textarea>
+      </div>
+      <div class="input-group">
+        <label for="mania">Tem alguma mania? Qual?</label>
+        <textarea id="mania" placeholder="Descreva a mania..."></textarea>
+      </div>
+      <div class="input-group">
+        <label for="aparencia">Aparência:</label>
+        <textarea id="aparencia" placeholder="Descreva a cor dos olhos, pintas, marcas de nascença..."></textarea>
+      </div>
+      <div class="input-group">
+        <label for="aniversario">Data de aniversário:</label>
+        <input type="date" id="aniversario">
+      </div>
+    </div>
+
+    <div id="atributos" class="tab-content">
+      <h2>Atributos</h2>
+      <p>Distribua os 15 pontos entre os atributos. Cada atributo começa com 1 ponto.</p>
+      <div class="atributos">
+        <div class="atributo">
+          <label for="forca">Força</label>
+          <input type="number" id="forca" value="1" min="1">
+        </div>
+        <div class="atributo">
+          <label for="velocidade">Velocidade</label>
+          <input type="number" id="velocidade" value="1" min="1">
+        </div>
+        <div class="atributo">
+          <label for="intelecto">Intelecto</label>
+          <input type="number" id="intelecto" value="1" min="1">
+        </div>
+        <div class="atributo">
+          <label for="resistencia">Resistência</label>
+          <input type="number" id="resistencia" value="1" min="1">
+        </div>
+        <div class="atributo">
+          <label for="aura">Aura</label>
+          <input type="number" id="aura" value="1" min="1">
+        </div>
+        <div class="atributo">
+          <label for="carisma">Carisma</label>
+          <input type="number" id="carisma" value="1" min="1">
+        </div>
+      </div>
+    </div>
+
+    <div id="estado" class="tab-content">
+      <h2>Estado</h2>
+      <div class="stats">
+        <div class="stat-box">
+          <label for="vidaAtual">Vida Atual</label>
+          <input type="number" id="vidaAtual" value="31" min="1">
+          <span>/</span>
+          <input type="number" id="vidaMaxima" value="31" min="1">
+        </div>
+        <div class="stat-box">
+          <label for="defesaAtual">Defesa Atual</label>
+          <input type="number" id="defesaAtual" value="11" min="1">
+          <span>/</span>
+          <input type="number" id="defesaMaxima" value="11" min="1">
+        </div>
+        <div class="stat-box">
+          <label for="sanidadeAtual">Sanidade Atual</label>
+          <input type="number" id="sanidadeAtual" value="11" min="1">
+          <span>/</span>
+          <input type="number" id="sanidadeMaxima" value="11" min="1">
+        </div>
+        <div class="stat-box">
+          <label for="cansaco">Cansaço</label>
+          <input type="number" id="cansaco" value="0" min="0">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
